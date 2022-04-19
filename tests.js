@@ -326,4 +326,43 @@ describe('test for findLast method', () => {
       expect(() => list.findLast('hello')).toThrow('Used multiple characters');
     });
 });
+
+describe('test for clear method', () => {
+
+    test('should delete all elements in the list', () => {
+      const list = new CircularList();
+      
+      ['d', 'e', 'f'].forEach(el => list.append(el));
+      list.clear();
+      expect(list.length).toBe(0);
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+    });
+  });
+  
+describe('test for extend method', () => {
+    test('should append items of another list', () => {
+      const list = new CircularList();
+      const list1 = new CircularList();
+  
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      ['d', 'e', 'f'].forEach(el => list1.append(el));
+      list.extend(list1);
+      expect(list.tail.current).toBe('f');
+      expect(list.length).toBe(6);
+    });
+  
+    test('should leave second list unchangeable', () => {
+      const list = new CircularList();
+      const list1 = new CircularList();
+  
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      ['d', 'e', 'f'].forEach(el => list1.append(el));
+      list.extend(list1);
+      list.append('g');
+      expect(list1.tail.current).toBe('f');
+      expect(list1.head.current).toBe('d');
+      expect(list1.length).toBe(3);  
+    });
+});
   
