@@ -169,21 +169,54 @@ class CircularList {
         this.tail = null;
       }
     
-      extend(elements) {
+    extend(elements) {
         let currEl = elements.head;
     
         for(let i = 0; i < elements.length; i++) {
           this.append(currEl.current);
           currEl = currEl.next;
         }
-      }
+    }
     
-      //additional method for showing final list
-      showList() {
+    //additional method for showing final list
+    showList() {
         let current = this.head;
         for(let i = 0; i < this.length; i++) {
           console.log(current.current);
           current = current.next;
         }
-      }
+    }
 }
+
+//checking some methods
+const newList = new CircularList();
+const newList2 = new CircularList();
+
+newList.append('a');
+newList.append('b');
+newList.append('c');
+newList.append('d');
+
+newList2.append('e');
+newList2.append('f');
+newList2.append('g');
+
+const clonedList = newList.clone();
+clonedList.showList();
+
+newList.extend(newList2);
+newList.showList();
+console.log(newList.delete(3));
+console.log(newList.findFirst('b'));
+console.log(newList.findLast('f'));
+console.log(newList.returnLength());
+
+newList.deleteAll('e');
+newList.insert('j', 2);
+newList.showList();
+console.log(newList.get(2));
+
+newList.reverse();
+newList.clear();
+
+module.exports = {CircularList};
