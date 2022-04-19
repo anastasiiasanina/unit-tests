@@ -264,4 +264,66 @@ describe('test for reverse method', () => {
       expect(list.tail.current),toBe('d');
     });
 });
+
+describe('test for findFirst method', () => {
+
+    test('should return index of first found element', () => {
+      const list = new CircularList();
+  
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(list.findFirst('f')).toBe(1);
+    });
+    
+    test('should return -1 if element wasnt found', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(list.findFirst('a')).toBe(-1);
+    });
+  
+    test('should throw exception with number instead of string', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(() => list.findFirst(5)).toThrow('Used number instead of string');
+    });
+  
+    test('should throw exception with multiple characters', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(() => list.findFirst('hello')).toThrow('Used multiple characters');
+    });
+});
+  
+describe('test for findLast method', () => {
+  
+    test('should return index of last found element', () => {
+      const list = new CircularList();
+  
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(list.findLast('f')).toBe(3);
+    });
+    
+    test('should return -1 if element wasnt found', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(list.findLast('a')).toBe(-1);
+    });
+  
+    test('should throw exception with number instead of string', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(() => list.findLast(5)).toThrow('Used number instead of string');
+    });
+  
+    test('should throw exception with multiple characters', () => {
+      const list = new CircularList();
+      
+      ['d', 'f', 'e', 'f'].forEach(el => list.append(el));
+      expect(() => list.findLast('hello')).toThrow('Used multiple characters');
+    });
+});
   
