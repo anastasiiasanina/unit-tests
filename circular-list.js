@@ -162,4 +162,28 @@ class CircularList {
         }
         return index;
     }
+
+    clear() {
+        this.length = 0;
+        this.head = null;
+        this.tail = null;
+      }
+    
+      extend(elements) {
+        let currEl = elements.head;
+    
+        for(let i = 0; i < elements.length; i++) {
+          this.append(currEl.current);
+          currEl = currEl.next;
+        }
+      }
+    
+      //additional method for showing final list
+      showList() {
+        let current = this.head;
+        for(let i = 0; i < this.length; i++) {
+          console.log(current.current);
+          current = current.next;
+        }
+      }
 }
