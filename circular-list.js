@@ -108,4 +108,58 @@ class CircularList {
             currEl = currEl.next;
         }
     }
+
+    clone() {
+        let clonedList = new CircularList();
+        let currElement = this.head;
+    
+        for(let i = 0; i < this.length; i++) {
+          clonedList.append(currElement.current);
+          currElement = currElement.next;
+        }
+    
+        return clonedList;
+    }
+    
+    reverse() {
+        let currEl = this.head;
+        let prevEl = this.tail;
+        let nextEl = null;
+    
+        for(let i = 0; i < this.length; i++) {
+          nextEl = currEl.next;
+          currEl.next = prevEl;
+          prevEl = currEl;
+          currEl = nextEl;
+        }
+    
+        this.head = prevEl;
+        this.tail = currEl;
+    }
+    
+    findFirst(el) {
+        let index = -1;
+        let currEl = this.head;
+    
+        for( let i = 0; i < this.length; i++) {
+          if(currEl.current == el) {
+            index = i;
+            return index;
+          }
+          currEl = currEl.next;
+        }
+        return index;
+    }
+    
+    findLast(el) {
+        let index = -1;
+        let currEl = this.head;
+    
+        for(let i = 0; i < this.length; i++){
+            if(currEl.current === el) index = i;
+    
+            currEl = currEl.next;
+        }
+        return index;
+    }
 }
