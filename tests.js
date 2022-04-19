@@ -111,3 +111,98 @@ describe('test for insert method', () => {
     .toThrow('Insert only one-character string');
   });
 });
+
+describe('test for delete method', () => {
+
+    it('should delete an element with mentioned index', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      list.delete(1);
+      expect(list.get(1)).toBe('c');
+    });
+  
+    test('should identify new head', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      list.delete(0);
+      expect(list.head.current).toBe('b');
+    });
+  
+    test('should identify new tail', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      list.delete(list.length - 1);
+      expect(list.tail.current).toBe('b');
+    });
+  
+    test('should decrease list length', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      const initLength = list.length;
+      list.delete(1);
+      expect(list.length).toBe(initLength - 1);
+    });
+  
+    test('should throw exception with negative index', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      expect(() => list.delete(-2)).toThrow('Use only positive index');
+    });
+  
+    test('should throw exception with index more than length', () => {
+      const list = new CircularList();
+      
+      const elements = ['a', 'b', 'c'];
+      elements.forEach(el => list.append(el));
+      expect(() => list.delete(elements.length))
+      .toThrow('Dont use index equal to or more than list length');
+    });
+  });
+  
+describe('test for deleteAll method', () => {
+  
+    test('should delete all elements with mentioned value', () => {
+      const list = new CircularList();
+  
+      const elements = ['a', 'b', 'c', 'c'];
+      elements.forEach(el => list.append(el));
+      list.deleteAll('c');
+      expect(list.tail.current).toBe('b');
+    });
+  
+    test('should decrease list length', () => {
+      const list = new CircularList();
+  
+      const elements = ['a', 'b', 'c', 'c'];
+      elements.forEach(el => list.append(el));
+      const initLength = list.length;
+      list.deleteAll('c');
+      expect(list.length).toBe(initLength - 2);
+    });
+    
+    test('should throw exception if number argument was used', () => {
+      const list = new CircularList();
+  
+      const elements = ['a', 'b', 'c', 'c'];
+      elements.forEach(el => list.append(el));
+      expect(() => list.deleteAll(4)).toThrow('Use element string value');
+    });
+  
+    test('should throw exception if argument with several characters', () => {
+      const list = new CircularList();
+  
+      const elements = ['a', 'b', 'c', 'c'];
+      elements.forEach(el => list.append(el));
+      expect(() => list.deleteAll('hello')).toThrow('Use element single value');
+    });
+});
