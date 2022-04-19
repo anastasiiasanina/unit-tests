@@ -206,3 +206,62 @@ describe('test for deleteAll method', () => {
       expect(() => list.deleteAll('hello')).toThrow('Use element single value');
     });
 });
+
+describe('test for get method', () => {
+
+    it('should return an element from mentioned pos', () => {
+      const list = new CircularList();
+      
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      expect(list.get(1)).toBe('b');
+    });
+  
+    test('should throw exception with index < 0', () => {
+      const list = new CircularList();
+      
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      expect(() => list.get(-2)).toThrow('Negative index');
+    });
+    
+    test('should throw exception with index >= list length', () => {
+      const list = new CircularList();
+      
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      expect(() => list.get(list.length))
+      .toThrow('Used index more than list length');
+    });
+  
+    test('should throw exception with string instead of index', () => {
+      const list = new CircularList();
+      
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      expect(() => list.get('a')).toThrow('Used string instead of number');
+    });
+  });
+  
+describe('test for clone method', () => {
+  
+    test('should clone current list', () => {
+      const list = new CircularList();
+      
+      ['d', 'e', 'f'].forEach(el => list.append(el));
+      const clone = list.clone();
+      expect(clone.head.current),toBe('d');
+      expect(clone.get(1)),toBe('e');
+      expect(clone.tail.current),toBe('f');
+    });
+});
+  
+describe('test for reverse method', () => {
+    
+    test('should reverse current list', () => {
+      const list = new CircularList();
+      
+      ['d', 'e', 'f'].forEach(el => list.append(el));
+      list.reverse();
+      expect(list.head.current),toBe('f');
+      expect(list.get(1)),toBe('e');
+      expect(list.tail.current),toBe('d');
+    });
+});
+  
