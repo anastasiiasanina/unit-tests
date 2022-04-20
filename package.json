@@ -1,0 +1,23 @@
+{
+  "name": "unit-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "circular-list.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anastasiiasanina/unit-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anastasiiasanina/unit-tests/issues"
+  },
+  "homepage": "https://github.com/anastasiiasanina/unit-tests#readme"
+}

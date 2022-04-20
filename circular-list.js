@@ -10,6 +10,10 @@ class CircularList {
     }
   
     append(el) {
+        if (typeof el !== 'string' || el.length > 1) {
+            throw new Error('Wrong format of data');
+        }
+
         const prev = this.tail;
         const element = {current: el, next: this.head};
   
@@ -27,7 +31,7 @@ class CircularList {
     }
 
     get(index) {
-        if(index < 0  || index >= this.length) {
+        if(index < 0  || index >= this.length || typeof index !== 'number') {
         throw new Error('Index for element is not suitable');
         }
     
@@ -40,6 +44,10 @@ class CircularList {
     }
 
     insert(el, index) {
+        if (typeof el !== 'string' || el.length > 1) {
+            throw new Error('Wrong format of data');
+        }
+
         if(index < 0 || index > this.length) {
             throw new Error('Index for inserted element is not suitable');
         }
@@ -96,6 +104,10 @@ class CircularList {
     }
     
     deleteAll(el) {
+        if (typeof el !== 'string' || el.length > 1) {
+            throw new Error('Wrong format of data');
+        }
+
         let currEl = this.head;
         let initLength = this.length;
         let diff;
@@ -138,6 +150,10 @@ class CircularList {
     }
     
     findFirst(el) {
+        if (typeof el !== 'string' || el.length > 1) {
+            throw new Error('Wrong format of data');
+        }
+
         let index = -1;
         let currEl = this.head;
     
@@ -152,6 +168,10 @@ class CircularList {
     }
     
     findLast(el) {
+        if (typeof el !== 'string' || el.length > 1) {
+            throw new Error('Wrong format of data');
+        }
+        
         let index = -1;
         let currEl = this.head;
     
