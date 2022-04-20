@@ -168,9 +168,9 @@ class CircularList {
     }
     
     findLast(el) {
-        if (typeof el !== 'string' || el.length > 1) {
+        /*if (typeof el !== 'string' || el.length > 1) {
             throw new Error('Wrong format of data');
-        }
+        }*/
 
         let index = -1;
         let currEl = this.head;

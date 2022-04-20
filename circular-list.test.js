@@ -357,4 +357,3 @@ describe('test for extend method', () => {
       expect(() => list.extend('a')).toThrow(Error); 
     });
 });
-  
