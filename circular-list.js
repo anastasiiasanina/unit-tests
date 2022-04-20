@@ -171,7 +171,7 @@ class CircularList {
         if (typeof el !== 'string' || el.length > 1) {
             throw new Error('Wrong format of data');
         }
-        
+
         let index = -1;
         let currEl = this.head;
     
@@ -190,6 +190,10 @@ class CircularList {
       }
     
     extend(elements) {
+        if (typeof elements !== "object") {
+            throw new Error('Wrong format of data');
+        }
+        
         let currEl = elements.head;
     
         for(let i = 0; i < elements.length; i++) {

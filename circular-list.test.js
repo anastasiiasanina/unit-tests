@@ -1,3 +1,4 @@
+const { expect } = require('@jest/globals');
 const { CircularList } = require('./circular-list.js');
 
 describe('test for length method', () => {
@@ -347,6 +348,13 @@ describe('test for extend method', () => {
       expect(list1.tail.current).toBe('f');
       expect(list1.head.current).toBe('d');
       expect(list1.length).toBe(3);  
+    });
+
+    test('should throw exception if wrong format was used', () => {
+      const list = new CircularList();
+  
+      ['a', 'b', 'c'].forEach(el => list.append(el));
+      expect(() => list.extend('a')).toThrow(Error); 
     });
 });
   
