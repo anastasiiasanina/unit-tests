@@ -62,8 +62,7 @@ describe('test for insert method', () => {
   it('should insert an element to the index', () => {
     const list = new CircularList();
     
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     list.insert('d', 1);
     expect(list.get(1)).toBe('d');
   });
@@ -71,8 +70,7 @@ describe('test for insert method', () => {
   test('should add +1 to list length', () => {
     const list = new CircularList();
 
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     list.insert('d', 1);
     expect(list.length).toBe(4);
   });
@@ -80,16 +78,14 @@ describe('test for insert method', () => {
   test('should throw exception with negative index', () => {
     const list = new CircularList();
     
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     expect(() => list.insert('d', -2)).toThrow(Error);
   });
 
   test('should throw exception with index more than length', () => {
     const list = new CircularList();
     
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     expect(() => list.insert('d', elements.length + 1))
     .toThrow(Error);
   });
@@ -97,16 +93,14 @@ describe('test for insert method', () => {
   test('should throw exception with inserting a number', () => {
     const list = new CircularList();
     
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     expect(() => list.insert(5, 1)).toThrow(Error);
   });
 
   test('throw exception if inserting a string with several characters', () => {
     const list = new CircularList();
     
-    const elements = ['a', 'b', 'c'];
-    elements.forEach(el => list.append(el));
+    ['a', 'b', 'c'].forEach(el => list.append(el));
     expect(() => list.insert('hello', 1))
     .toThrow(Error);
   });
@@ -117,8 +111,7 @@ describe('test for delete method', () => {
     it('should delete an element with mentioned index', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       list.delete(1);
       expect(list.get(1)).toBe('c');
     });
@@ -126,8 +119,7 @@ describe('test for delete method', () => {
     test('should identify new head', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       list.delete(0);
       expect(list.head.current).toBe('b');
     });
@@ -135,8 +127,7 @@ describe('test for delete method', () => {
     test('should identify new tail', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       list.delete(list.length - 1);
       expect(list.tail.current).toBe('b');
     });
@@ -144,8 +135,7 @@ describe('test for delete method', () => {
     test('should decrease list length', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       const initLength = list.length;
       list.delete(1);
       expect(list.length).toBe(initLength - 1);
@@ -154,16 +144,14 @@ describe('test for delete method', () => {
     test('should throw exception with negative index', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       expect(() => list.delete(-2)).toThrow(Error);
     });
   
     test('should throw exception with index more than length', () => {
       const list = new CircularList();
       
-      const elements = ['a', 'b', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c'].forEach(el => list.append(el));
       expect(() => list.delete(elements.length))
       .toThrow(Error);
     });
@@ -174,8 +162,7 @@ describe('test for deleteAll method', () => {
     test('should delete all elements with mentioned value', () => {
       const list = new CircularList();
   
-      const elements = ['a', 'b', 'c', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c', 'c'].forEach(el => list.append(el));
       list.deleteAll('c');
       expect(list.tail.current).toBe('b');
     });
@@ -183,8 +170,7 @@ describe('test for deleteAll method', () => {
     test('should decrease list length', () => {
       const list = new CircularList();
   
-      const elements = ['a', 'b', 'c', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c', 'c'].forEach(el => list.append(el));
       const initLength = list.length;
       list.deleteAll('c');
       expect(list.length).toBe(initLength - 2);
@@ -193,16 +179,14 @@ describe('test for deleteAll method', () => {
     test('should throw exception if number argument was used', () => {
       const list = new CircularList();
   
-      const elements = ['a', 'b', 'c', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c', 'c'].forEach(el => list.append(el));
       expect(() => list.deleteAll(4)).toThrow(Error);
     });
   
     test('should throw exception if argument with several characters', () => {
       const list = new CircularList();
   
-      const elements = ['a', 'b', 'c', 'c'];
-      elements.forEach(el => list.append(el));
+      ['a', 'b', 'c', 'c'].forEach(el => list.append(el));
       expect(() => list.deleteAll('hello')).toThrow(Error);
     });
 });

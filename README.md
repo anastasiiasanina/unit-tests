@@ -14,16 +14,16 @@ They are:
 
 - **returnLength()** - returns length of the list
 - **append()** - appends an element to the end of the list
-- **get()** - get element by index
-- **insert()** - insert element to certain position
-- **delete()** - delete one certain element
-- **deleteAll()** - delete all elements with certain value
-- **clone()** - clone current list
-- **reverse()** - reverse current list
-- **findFirst()** - find first element in the list with certain value
-- **findLast()** - find last element in the list with certain value
-- **clear()** - clear current list
-- **extend()** - extend current list with another one
+- **get()** - gets element by index
+- **insert()** - inserts element to certain position
+- **delete()** - deletes one certain element
+- **deleteAll()** - deletes all elements with certain value
+- **clone()** - clones current list
+- **reverse()** - reverses current list
+- **findFirst()** - finds first element in the list with certain value
+- **findLast()** - finds last element in the list with certain value
+- **clear()** - clears current list
+- **extend()** - extends current list with another one
 
 ## Setup
 
