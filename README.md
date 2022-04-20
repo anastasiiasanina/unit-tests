@@ -13,17 +13,18 @@ Circular single linked list made with the class with 12 basic methods for modify
 They are:
 
 - **returnLength()** - returns length of the list
-- **append()** - appends an element to the end of the list
-- **get()** - gets element by index
-- **insert()** - inserts element to certain position
-- **delete()** - deletes one certain element
-- **deleteAll()** - deletes all elements with certain value
+- **append(el)** - appends an element to the end of the list
+- **get(index)** - gets element by index
+- **insert(el, index)** - inserts element to certain position
+- **delete(index)** - deletes one certain element
+- **deleteAll(element)** - deletes all elements with certain value
 - **clone()** - clones current list
 - **reverse()** - reverses current list
-- **findFirst()** - finds first element in the list with certain value
-- **findLast()** - finds last element in the list with certain value
+- **findFirst(el)** - finds first element in the list with certain value
+- **findLast(el)** - finds last element in the list with certain value
 - **clear()** - clears current list
-- **extend()** - extends current list with another one
+- **extend(elements)** - extends current list with another one
+- **showList()** - shows all elements of the list
 
 ## Setup
 
@@ -42,3 +43,4 @@ node circular-list.js
 npm test
 ```
 ## Commit with failed tests
+[Failed tests](https://github.com/anastasiiasanina/unit-tests/commit/5a3503d5b0a7cbf99ac074408cc9cb66a108abb6)
