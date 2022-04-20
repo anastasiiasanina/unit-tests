@@ -12,18 +12,18 @@ Number of book: 422
 Circular single linked list made with the class with 12 basic methods for modifying the list.
 They are:
 
-**returnLength()** - returns length of the list
-**append()** - appends an element to the end of the list
-**get()** - get element by index
-**insert()** - insert element to certain position
-**delete()** - delete one certain element
-**deleteAll()** - delete all elements with certain value
-**clone()** - clone current list
-**reverse()** - reverse current list
-**findFirst()** - find first element in the list with certain value
-**findLast()** - find last element in the list with certain value
-**clear()** - clear current list
-**extend()** - extend current list with another one
+- **returnLength()** - returns length of the list
+- **append()** - appends an element to the end of the list
+- **get()** - get element by index
+- **insert()** - insert element to certain position
+- **delete()** - delete one certain element
+- **deleteAll()** - delete all elements with certain value
+- **clone()** - clone current list
+- **reverse()** - reverse current list
+- **findFirst()** - find first element in the list with certain value
+- **findLast()** - find last element in the list with certain value
+- **clear()** - clear current list
+- **extend()** - extend current list with another one
 
 ## Setup
 
